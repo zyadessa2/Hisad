@@ -24,7 +24,7 @@ const Footer = () => {
 
   return <>
 
-    <footer className=' shadowTop overflow-x-hidden '>
+    <footer className=' shadow-lg overflow-x-hidden '>
       <div className="container">
         <div className="row  justify-content-between align-items-center">
           <div className="col-md-3">

@@ -3,8 +3,30 @@
 @tailwind utilities;
 
 
-*{
-  font-family: "IBM Plex Sans",  sans-serif;
+body {
+  font-family: "Agdasima", sans-serif;
+  overflow-x: hidden;
+
+}
+
+* {
   padding: 0;
   margin: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
 }
