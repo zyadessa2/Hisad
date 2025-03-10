@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../Assets/image 1.svg";
 import { Dropdown } from "flowbite-react"; // استيراد Dropdown من flowbite-react
 import { FaChevronDown, FaFacebook, FaInstagram } from "react-icons/fa"; // سهم لتحت من react-icons
 import { IoLogoWhatsapp } from "react-icons/io";
 
 const CustomLink = ({ to, title, className = "" }) => {
+      const location = useLocation();
+  
   return (
     <Link
       to={to}
-      className={`${className} relative group no-underline text-[#445F2D]`}
+      className={`${className} relative group no-underline text-[#445F2D]  end-0  hover:text-green-500 ${location.pathname === to ? 'border-b-2 border-green-500' : ''}`}
     >
       {title}
     </Link>
@@ -18,6 +20,8 @@ const CustomLink = ({ to, title, className = "" }) => {
 };
 
 const CustomMobileLink = ({ to, title, className = "", toggle }) => {
+      const location = useLocation();
+  
   const handelClick = () => {
     toggle();
   };
@@ -25,7 +29,7 @@ const CustomMobileLink = ({ to, title, className = "", toggle }) => {
   return (
     <button
       to={to}
-      className={`${className} relative group text-bold text-lg text-[#445F2D] my-2`}
+      className={`${className} relative group text-bold text-lg text-[#445F2D] my-2 ${location.pathname === to ? 'border-b-2 border-blue-500' : ''}`}
       onClick={handelClick}
     >
       {title}
@@ -69,39 +73,48 @@ const Navbar = () => {
       </button>
 
       <div className="w-full flex justify-between items-center lg:hidden">
-        <nav>
-          <CustomLink
-            to="/about"
-            title="عن الشركه"
-            className="mx-7 text-bold text-lg "
-          />
+        <nav className="flex items-center justify-center flex-wrap">
           <CustomLink
             to="/contactUs"
             title="تواصل معنا"
             className="mx-7 text-bold text-lg "
           />
+
+          <Dropdown
+            label={
+              <div className="flex items-center mx-7 text-bold text-lg text-[#445F2D] ">
+                <FaChevronDown className="mr-2" /> المنتجات
+              </div>
+            }
+            inline
+            arrowIcon={false} // عشان نتحكم في السهم بنفسنا
+          >
+            <Dropdown.Item
+              className="text-center hover:bg-light/90 !text-[#445F2D] no-underline text-bold text-lg"
+              as={Link}
+              to="/products/pesticides"
+            >
+              مبيدات
+            </Dropdown.Item>
+            <Dropdown.Item
+              className="text-center hover:bg-light/90 !text-[#445F2D] no-underline text-bold text-lg"
+              as={Link}
+              to="/products/fertilizers"
+            >
+              سماد
+            </Dropdown.Item>
+          </Dropdown>
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap">
-          <Dropdown
-              label={
-                <div className="flex items-center mx-7 text-bold text-lg text-[#445F2D] ">
-                 <FaChevronDown className="mr-2" /> المنتجات 
-                </div>
-              }
-              inline
-              arrowIcon={false} // عشان نتحكم في السهم بنفسنا
-            >
-              <Dropdown.Item className='text-center hover:bg-light/90 !text-[#445F2D] no-underline text-bold text-lg' as={Link} to="/products/pesticides">
-                مبيدات
-              </Dropdown.Item>
-              <Dropdown.Item className='text-center hover:bg-light/90 !text-[#445F2D] no-underline text-bold text-lg' as={Link} to="/products/fertilizers">
-                سماد
-              </Dropdown.Item>
-            </Dropdown>          
-          
           <CustomLink
-            to="/home"
+            to="/about"
+            title="عن الشركه"
+            className="mx-7 text-bold text-lg "
+          />
+
+          <CustomLink
+            to="/"
             title="الرئيسيه "
             className="mx-7 text-bold text-lg "
           />
@@ -125,16 +138,24 @@ const Navbar = () => {
             <Dropdown
               label={
                 <div className="flex items-center mx-7 text-bold text-lg text-[#445F2D] ">
-                 <FaChevronDown className="mr-2" /> المنتجات 
+                  <FaChevronDown className="mr-2" /> المنتجات
                 </div>
               }
               inline
               arrowIcon={false} // عشان نتحكم في السهم بنفسنا
             >
-              <Dropdown.Item className='text-center hover:bg-light/90 !text-[#445F2D] no-underline text-bold text-lg' as={Link} to="/products/pesticides">
+              <Dropdown.Item
+                className="text-center hover:bg-light/90 !text-[#445F2D] no-underline text-bold text-lg"
+                as={Link}
+                to="/products/pesticides"
+              >
                 مبيدات
               </Dropdown.Item>
-              <Dropdown.Item className='text-center hover:bg-light/90 !text-[#445F2D] no-underline text-bold text-lg' as={Link} to="/products/fertilizers">
+              <Dropdown.Item
+                className="text-center hover:bg-light/90 !text-[#445F2D] no-underline text-bold text-lg"
+                as={Link}
+                to="/products/fertilizers"
+              >
                 سماد
               </Dropdown.Item>
             </Dropdown>
@@ -160,8 +181,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 mr-3 sm-mx-1  rounded-full "
             >
-              <FaFacebook className="text-2xl"/>
-
+              <FaFacebook className="text-2xl" />
             </motion.a>
             <motion.a
               className="w-6 mx-3 sm-mx-1"
@@ -170,8 +190,7 @@ const Navbar = () => {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
             >
-              <IoLogoWhatsapp className="text-2xl text-green-500"/>
-
+              <IoLogoWhatsapp className="text-2xl text-green-500" />
             </motion.a>
             <motion.a
               className="w-7 ml-3 sm-mx-1"
@@ -180,8 +199,7 @@ const Navbar = () => {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
             >
-              <FaInstagram className="text-2xl text-red-500"/>
-
+              <FaInstagram className="text-2xl text-red-500" />
             </motion.a>
           </nav>
         </div>

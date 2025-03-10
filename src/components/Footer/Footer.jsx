@@ -7,13 +7,14 @@ import { MdEmail } from 'react-icons/md'
 import { FaLocationDot } from 'react-icons/fa6'
 
 
+
 const Footer = () => {
 
   const CustomLink = ({to , title , className=""}) => {
     const location = useLocation();
   
     return(
-      <Link to={to} className={`${className} relative end-0 group hover:text-blue-500 ${location.pathname === to ? 'border-b-2 border-blue-500' : ''} `}>
+      <Link to={to} className={`${className} relative end-0 group hover:text-green-500 ${location.pathname === to ? 'border-b-2 border-blue-500' : ''} `}>
         {title}
         
       </Link>
@@ -31,7 +32,7 @@ const Footer = () => {
             <img className='w-50  m-auto' src={logo} alt="" />
           </div>
 
-          <div className="col-md-4 py-8 text-center">
+          <div className="col-md-6 py-8 text-center">
             <CustomLink to='/'  title="الرئيسيه"  className='mr-3 text-decoration-none text-bold text-lg text-[#445F2D]'/>
             <CustomLink to="/products" title="المنتجات" className='mx-3 text-decoration-none text-bold text-lg text-[#445F2D]'/>
             <CustomLink to="/about" title="عن الشركه" className='mx-2 text-decoration-none text-bold text-lg text-[#445F2D]'/>
