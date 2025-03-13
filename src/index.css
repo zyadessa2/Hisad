@@ -30,3 +30,14 @@ html {
 a {
   text-decoration: none;
 }
+
+
+@keyframes leafMove {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  50% { transform: translateX(10px) translateY(-10px) rotate(5deg); }
+  100% { transform: translateX(0) translateY(0) rotate(0deg); }
+}
+
+.animate-leaf {
+  animation: leafMove 4s ease-in-out infinite;
+}

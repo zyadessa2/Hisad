@@ -5,6 +5,8 @@ import AnimatedText from "../others/AnimatedText";
 import mainImg from "../Assets/hero section.webp";
 import { Link, useLocation } from "react-router-dom";
 import AboutSection from "../components/aboutSection/AboutSection";
+import OurGoals from "../components/ourGoals/OurGoals";
+import OurVision from "../components/ourvision/OurVision";
 
 const About = () => {
     const location = useLocation();
@@ -61,7 +63,8 @@ const About = () => {
 
 
         <AboutSection/>
-
+        <OurGoals/>
+        <OurVision/>
 
       </div>
     </>

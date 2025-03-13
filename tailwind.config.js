@@ -16,6 +16,18 @@ module.exports = {
     darkMode:'class',
     theme: {
       extend: {
+
+        keyframes: {
+          leafMove: {
+            '0%': { transform: 'translateX(0) translateY(0) rotate(0deg)' },
+            '50%': { transform: 'translateX(10px) translateY(-10px) rotate(5deg)' },
+            '100%': { transform: 'translateX(0) translateY(0) rotate(0deg)' },
+          },
+        },
+        animation: {
+          leaf: 'leafMove 4s ease-in-out infinite',
+        },
+
           boxShadow: {
             'top-only': '0 -10px 10px rgba(0, 0, 0, 0.1)', // ظل خفيف من أعلى
             'yellow-shadow': '0px 4px 4px 0px #FEBA12',

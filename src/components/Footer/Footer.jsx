@@ -28,14 +28,14 @@ const Footer = () => {
     <footer className=' shadow-lg overflow-x-hidden '>
       <div className="container">
         <div className="row  justify-content-between align-items-center">
-          <div className="col-md-3">
+          <div className="col-md-2">
             <img className='w-50  m-auto' src={logo} alt="" />
           </div>
 
-          <div className="col-md-6 py-8 text-center">
-            <CustomLink to='/'  title="الرئيسيه"  className='mr-3 text-decoration-none text-bold text-lg text-[#445F2D]'/>
+          <div className="col-md-7 py-8 text-center">
+            <CustomLink to='/'  title="الرئيسية"  className='mr-3 text-decoration-none text-bold text-lg text-[#445F2D]'/>
             <CustomLink to="/products" title="المنتجات" className='mx-3 text-decoration-none text-bold text-lg text-[#445F2D]'/>
-            <CustomLink to="/about" title="عن الشركه" className='mx-2 text-decoration-none text-bold text-lg text-[#445F2D]'/>
+            <CustomLink to="/about" title="عن الشركة" className='mx-2 text-decoration-none text-bold text-lg text-[#445F2D]'/>
             <CustomLink to="/contactUs" title="تواصل معنا" className='mx-3 text-decoration-none text-bold text-lg text-[#445F2D]'/>
           </div>
           <div className="col-md-3 ">
