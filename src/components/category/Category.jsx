@@ -47,7 +47,7 @@ const Category = () => {
           <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 0.8, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5 }}
               className="text-center"
             >
@@ -65,7 +65,7 @@ const Category = () => {
 
             <motion.div
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 0.8, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5 }}
               className="text-center"
             >
@@ -83,7 +83,7 @@ const Category = () => {
 
             <motion.div
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 0.8, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.8 }}
               className="text-center"
             >
@@ -101,7 +101,7 @@ const Category = () => {
 
             <motion.div
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 0.8, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.8 }}
               className="text-center"
             >
