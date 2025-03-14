@@ -87,7 +87,7 @@ const ContactUs = () => {
                 <motion.div initial={{opacity:0 , y:50}} whileInView={{opacity:.8 , y:0}} transition={{duration:1.5 }} className="c shadow-lg p-4 flex flex-col justify-center align-items-center rounded-lg ">
                   <FiPhoneCall className="text-6xl " />
                   <h4 className="py-3">تواصل معنا</h4>
-                  <div className="numbers text-center grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 xs:grid-cols-1 lg:grid-cols-3 gap-0 justify-center items-center w-full">
+                  <div className="numbers text-center grid xl:grid-cols-2 md:grid-cols-1  gap-0 justify-center items-center w-full">
                     <p className="text-[#254C00] fw-bold p-0 m-0">
                       045 263 8818
                     </p>
@@ -108,7 +108,7 @@ const ContactUs = () => {
                 <motion.div initial={{opacity:0 , y:50}} whileInView={{opacity:.8 , y:0}} transition={{duration:1.7 }} className="c shadow-lg p-5 py-10 flex flex-col justify-center align-items-center rounded-lg ">
                   <HiOutlineMailOpen className="text-6xl " />
                   <h4 className="py-2"> البريد الالكترونى</h4>
-                  <div className="mail text-center  w-full">
+                  <div className="mail text-center  ">
                     <p className="text-[#254C00] fw-bold">
                       7asad.argric.tech@gmail.com
                     </p>

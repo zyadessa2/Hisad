@@ -8,6 +8,8 @@ import TransitionEffect from "../others/TransitionEffect";
 import ContactUsSection from "../components/contactUsSection/ContactUsSection";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 
 const Home = () => {
   return (
@@ -63,15 +65,13 @@ const Home = () => {
               src={leave}
               alt=""
             />
-            <h2 className="text-[#445F2D] text-bold text-6xl lg:!text-5xl md:!text-5xl sm:!text-4xl xs:!text-4xl py-5">
+            <motion.h2 initial={{opacity:0 , y:50}} whileInView={{opacity:.8 , y:0}} transition={{duration:1.5 }} className="text-[#445F2D] text-bold text-6xl lg:!text-5xl md:!text-5xl sm:!text-4xl xs:!text-4xl py-5">
               حصاد للتقنيه الزراعيه المطوره
-            </h2>
+            </motion.h2>
             <p className="leading-relaxed  m-auto text-center text-2xl !w-[100%] text-dark/75">
-              تأسست شركة النماء الزراعي عام 2010 كمؤسسة متخصصة في تطوير حلول
-              مبتكرة لدعم قطاع الزراعة وتحقيق التنمية الزراعية المستدامة. منذ
-              ذلك الحين، أصبحت الشركة من الرواد في مجال توفير الحلول الزراعية
-              المتكاملة التي تجمع بين التكنولوجيا الحديثة والطرق التقليدية
-              لتحقيق أعلى إنتاجية وأفضل جودة في المحاصيل.
+            شركة حصاد للتقنية الزراعية المتطورة  هي إحدى الشركات الرائدة في المجال الزراعي، حيث بدأت نشاطها في عام 2015، متخصصة في استيراد وتوزيع الأسمدة والمبيدات الزراعية من كبرى الشركات العالمية. 
+كما تستورد الشركة المواد الخام اللازمة لصناعة الأسمدة والمبيدات ومنظمات النمو، مما يتيح لها تقديم حلول متكاملة تلبي احتياجات القطاع الزراعي.
+
             </p>
             <Link to={'/about'} className="btn !bg-[#45B07E] hover:!bg-[#389167] !px-10 text-light !text-xl font-bold mt-6">
               اعرف اكثر

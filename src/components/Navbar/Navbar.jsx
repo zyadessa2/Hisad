@@ -27,9 +27,9 @@ const CustomMobileLink = ({ to, title, className = "", toggle }) => {
   };
 
   return (
-    <button
+    <Link
       to={to}
-      className={`${className} relative group text-bold text-lg text-[#445F2D] my-2 ${location.pathname === to ? 'border-b-2 border-blue-500' : ''}`}
+      className={`${className} relative group text-bold text-lg no-underline text-[#445F2D] my-2 ${location.pathname === to ? 'border-b-2 border-blue-500' : ''}`}
       onClick={handelClick}
     >
       {title}
@@ -37,7 +37,7 @@ const CustomMobileLink = ({ to, title, className = "", toggle }) => {
       {/* <span className={`absolute left-0 group-hover:w-full 
       transition-[width] ease duration-300
       -bottom-0.5  h-[1px] inline-block dark:bg-dark bg-light`}>&nbsp;</span> */}
-    </button>
+    </Link>
   );
 };
 

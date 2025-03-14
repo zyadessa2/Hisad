@@ -52,22 +52,22 @@ const Footer = () => {
 
           <div className="col-md-3 col-sm-5">
           <div className="location mt-2 flex justify-center align-middle">
-          <FaLocationDot className='text-red-500  me-1 text-lg'/>
-            <span >10th of Ramadan</span>
+          <FaLocationDot className='text-red-500  me-0 text-xl sm:text-2xl'/>
+            <span >مول ديزرت روز - النوبارية الجديدة، محافظة البحيرة</span>
           </div>
           </div>
           
           <div className="col-md-3 col-sm-5">
           <div className="email mt-2 flex justify-center align-middle">
           <MdEmail className='text-blue-500  me-1 text-lg'/>
-            <span>icpchti@gmail.com</span>
+            <span>7asad.argric.tech@gmail.com</span>
           </div>
           </div>
 
           <div className="col-md-3 col-sm-5">
           <div className="phone mt-2 flex justify-center align-middle">
           <FaPhoneAlt className='  me-1 text-lg'/>
-            <span>+20 01066958945</span>
+            <span> 045 263 8818 - 01554651229   </span>
           </div>
           </div>
           
