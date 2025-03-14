@@ -50,7 +50,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="relative  bg-light z-50 lg:px-16 md:px-12 sm:px-8  w-full px-32 py-8 font-medium flex items-center justify-between ">
+    <header className="relative  bg-light z-50 lg:px-16 md:px-12 sm:px-8  w-full px-32 py-8 font-medium flex items-center justify-between fixed">
       <button
         className="hidden lg:flex  flex-col justify-center items-center"
         onClick={handelClick}
@@ -135,6 +135,13 @@ const Navbar = () => {
               className=""
               toggle={handelClick}
             />
+            <CustomMobileLink
+              to="/about"
+              title="عن الشركه"
+              className=""
+              toggle={handelClick}
+            />
+
             <Dropdown
               label={
                 <div className="flex items-center mx-7 text-bold text-lg text-[#445F2D] ">
@@ -159,14 +166,10 @@ const Navbar = () => {
                 سماد
               </Dropdown.Item>
             </Dropdown>
+
+            
             <CustomMobileLink
-              to="/projects"
-              title="عن الشركه"
-              className=""
-              toggle={handelClick}
-            />
-            <CustomMobileLink
-              to="/projects"
+              to="/contactUs"
               title="تواصل معنا"
               className=""
               toggle={handelClick}
@@ -206,7 +209,9 @@ const Navbar = () => {
       ) : null}
 
       <div className="absolute bg-light rounded-2xl left-[50%] top-2 translate-x-[-50%]">
-        <img src={logo} alt="" />
+        <Link to={'/'}>
+        <img src={logo} alt="حصاد للتقنيه الزراعيه المتطوره" />
+        </Link>
       </div>
     </header>
   );

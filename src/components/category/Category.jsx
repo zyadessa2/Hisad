@@ -19,9 +19,9 @@ const Category = () => {
         <div className="content absolute text-center  top-16">
             <h2 className='text-light pb-3 text-5xl'>المنتجات</h2>
             <p className="w-[65%] sm:w-[90%] m-auto py-3 leading-relaxed text-center text-white text-lg ">نقدم لك مجموعة من الحلول الزراعية المبتكرة التي تدعم تطوير الإنتاج الزراعي وتساهم في تحقيق استدامة بيئية، لتعزيز الإنتاجية وتحقيق الأمن الغذائي.</p>
-                <button className="btn !bg-[#45B07E] hover:!bg-[#389167] !px-10 text-light !text-xl font-bold mt-6">
+                <Link to={'/products'} className="btn !bg-[#45B07E] hover:!bg-[#389167] !px-10 text-light !text-xl font-bold mt-6">
                 لمعلومات اكثر       
-                </button>
+                </Link>
         </div>
     </div>
 
