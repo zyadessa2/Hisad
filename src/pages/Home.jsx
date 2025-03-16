@@ -16,6 +16,7 @@ const Home = () => {
     <>
 
 <Helmet>
+<meta name="google-site-verification" content="a65RsQZA0eonsEZFcuAzrUrXrBZdo1BygAHiGlHBrR8" />
         <title>حصاد للتقنية الزراعية المتطورة | حلول زراعية مبتكرة</title>
         <meta
           name="description"
