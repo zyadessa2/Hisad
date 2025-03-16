@@ -92,6 +92,14 @@ const Navbar = () => {
             <Dropdown.Item
               className="text-center hover:bg-light/90 !text-[#445F2D] no-underline text-bold text-lg"
               as={Link}
+              to="/products"
+            >
+              كل المنتجات
+            </Dropdown.Item>
+
+            <Dropdown.Item
+              className="text-center hover:bg-light/90 !text-[#445F2D] no-underline text-bold text-lg"
+              as={Link}
               to="/products/pesticides"
             >
               مبيدات
