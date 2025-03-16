@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import image from "../../Assets/category.jpg";
+import p1 from "../../Assets/product1.svg";
 import productsData from "../../products.json";
 
 const RecentProducts = () => {
@@ -54,7 +55,7 @@ const RecentProducts = () => {
               <div className="label bg-[#254C00] py-0 rounded-br-[15px] rounded-tr-[15px] absolute top-0 left-0">
                 <p className="text-white py-0 px-2 text-lg">{product.weight}</p>
               </div>
-              <img src={product.image} alt={product.name} />
+              <img src={p1} alt={product.name} />
               <h3 className="py-3 text-xl text-dark">{product.name}</h3>
             </div>
           </Link>

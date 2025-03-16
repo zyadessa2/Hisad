@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import AnimatedText from "../others/AnimatedText";
 import mainImg from "../Assets/hero section.webp";
 import leaf from "../Assets/leaveAbout.svg";
+import p1 from "../Assets/product1.svg";
 import RecentProducts from "../components/recentProducts/RecentProducts";
 import productsData from "../products.json"; 
 
@@ -111,7 +112,7 @@ const ProductDetails = () => {
               <div className="image flex flex-col justify-center align-items-center text-center">
                 <img
                   className="w-75"
-                  src={product.image}
+                  src={p1}
                   alt={`${product.name} - ${product.weight}`}
                 />
                 <p className="bg-[#254C00] w-75 py-2 rounded-tr-lg rounded-tl-lg rounded-br-lg text-lg text-white">

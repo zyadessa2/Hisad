@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import AnimatedText from "../others/AnimatedText";
 import mainImg from "../Assets/hero section.webp";
+import p1 from "../Assets/product1.svg";
 import productsData from "../products.json";
 
 const CategoryDetails = () => {
@@ -102,7 +103,7 @@ const CategoryDetails = () => {
                       <div className="label bg-[#254C00] py-0 rounded-br-[15px] rounded-tr-[15px] absolute top-0 left-0">
                         <p className="text-white py-0 px-2 text-lg">{product.weight}</p>
                       </div>
-                      <img src={product.image} alt={product.name} />
+                      <img src={p1} alt={product.name} />
                       <h3 className="py-3 text-xl">{product.name}</h3>
                     </div>
                   </Link>
