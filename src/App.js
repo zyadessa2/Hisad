@@ -22,10 +22,10 @@ let routers = createBrowserRouter([
       { path: "product/:id", element: <ProductDetails /> },
     ],
   },
-  {
-    path: "/sitemap.xml", // مسار الـ Sitemap
-    element: <Sitemap />,
-  },
+  // {
+  //   path: "/sitemap.xml", // مسار الـ Sitemap
+  //   element: <Sitemap />,
+  // },
 ]);
 
 
