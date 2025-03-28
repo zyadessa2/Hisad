@@ -1,10 +1,11 @@
 import React from 'react'
 import logo from '../../Assets/image 1.svg'
 import { Link, useLocation } from 'react-router-dom'
-import { FaFacebook, FaInstagram, FaPhoneAlt } from 'react-icons/fa'
-import { IoLogoWhatsapp } from 'react-icons/io'
+import { FaFacebook,  FaInstagram, FaPhoneAlt,  } from 'react-icons/fa'
+import {  IoLogoWhatsapp } from 'react-icons/io'
 import { MdEmail } from 'react-icons/md'
 import { FaLocationDot } from 'react-icons/fa6'
+
 
 
 
@@ -75,6 +76,9 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+
+     
+
   </>
 }
 

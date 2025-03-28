@@ -80,7 +80,13 @@ const Navbar = () => {
             className="mx-7 text-bold text-lg "
           />
 
-          <Dropdown
+          <CustomLink
+            to="/products"
+            title=" المنتجات"
+            className="mx-7 text-bold text-lg "
+          />
+
+          {/* <Dropdown
             label={
               <div className="flex items-center mx-7 text-bold text-lg text-[#445F2D] ">
                 <FaChevronDown className="mr-2" /> المنتجات
@@ -111,7 +117,7 @@ const Navbar = () => {
             >
               سماد
             </Dropdown.Item>
-          </Dropdown>
+          </Dropdown> */}
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap">
