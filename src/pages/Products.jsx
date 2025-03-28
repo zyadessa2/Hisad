@@ -17,6 +17,7 @@ const Products = () => {
     { name: "مبيدات", icon: <RiPlantLine  className="w-full"/>, key: "pesticides" },
     { name: "أسمدة", icon: <GiNuclearPlant className="w-full"/>, key: "fertilizers" },
   ];
+  
 
   return (
     <>

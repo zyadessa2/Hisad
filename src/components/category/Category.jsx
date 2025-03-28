@@ -57,7 +57,7 @@ const Category = () => {
               </h3>
               <Link
                 className="no-underline btn !bg-[#45B07E] hover:!bg-[#389167] !px-6 text-light !text-lg font-semibold mt-2"
-                to={"/"}
+                to={"/category/fertilizers"}
               >
                 اعرف اكثر
               </Link>
@@ -75,7 +75,7 @@ const Category = () => {
               </h3>
               <Link
                 className="no-underline btn !bg-[#45B07E] hover:!bg-[#389167] !px-6 text-light !text-lg font-semibold mt-2"
-                to={"/"}
+                to={"/category/supplements"}
               >
                 اعرف اكثر
               </Link>
@@ -93,7 +93,7 @@ const Category = () => {
               </h3>
               <Link
                 className="no-underline btn !bg-[#45B07E] hover:!bg-[#389167] !px-6 text-light !text-lg font-semibold mt-2"
-                to={"/"}
+                to={"/category/pesticides"}
               >
                 اعرف اكثر
               </Link>
@@ -111,7 +111,7 @@ const Category = () => {
               </h3>
               <Link
                 className="no-underline btn !bg-[#45B07E] hover:!bg-[#389167] !px-6 text-light !text-lg font-semibold mt-2"
-                to={"/"}
+                to={"/category/pesticides"}
               >
                 اعرف اكثر
               </Link>

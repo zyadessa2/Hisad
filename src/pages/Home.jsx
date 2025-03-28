@@ -45,12 +45,12 @@ const Home = () => {
             dir="rtl"
             text="حصاد من الجودة عالية زراعية أسمدة "
 
-            ClassName="absolute top-[15%] lg:top-[15%] left-1/2 transform -translate-x-1/2 mt-6 lg:!text-5xl md:!text-4xl sm:!text-3xl xs:!text-3xl sm:mb-8 text-white z-20"
+            ClassName="absolute top-[15%] lg:top-[15%] left-1/2 transform -translate-x-1/2 mt-6 !text-5xl md:!text-4xl sm:!text-3xl xs:!text-3xl sm:mb-8 text-white z-20"
           />
           <AnimatedText
             dir="rtl"
             text="  المحاصيل. إنتاجية لتحسين للمزارعين فنية استشارات نقدم  "
-            ClassName="absolute top-[35%] lg:top-[30%] left-1/2 transform -translate-x-1/2 mt-6 lg:!text-5xl md:!text-4xl sm:!text-3xl xs:!text-3xl sm:mb-8 text-white z-20"
+            ClassName="absolute top-[35%] lg:top-[30%] left-1/2 transform -translate-x-1/2 mt-6 !text-5xl md:!text-4xl sm:!text-3xl xs:!text-3xl sm:mb-8 text-white z-20"
           />
 
           {/* الزر */}
