@@ -1,35 +1,86 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import AnimatedText from "../others/AnimatedText";
 import mainImg from "../Assets/hero section.webp";
 import leaf from "../Assets/leaveAbout.svg";
 import p1 from "../Assets/product1.svg";
 import RecentProducts from "../components/recentProducts/RecentProducts";
-import productsData from "../products.json"; 
+import { fetchProducts } from "../airtable";
 
 const ProductDetails = () => {
   const [activeTab, setActiveTab] = useState("نبذة");
-  const { id } = useParams(); // جلب الـ id من الـ URL
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // جمع كل المنتجات في مصفوفة واحدة للبحث
-  const allProducts = [
-    ...productsData.fertilizers.liquid_foliar,
-    ...productsData.fertilizers.suspension,
-    ...productsData.fertilizers.liquid_powder,
-    ...productsData.pesticides.liquid_foliar,
-    ...productsData.pesticides.suspension,
-    ...productsData.pesticides.liquid_powder,
-    ...productsData.supplements.liquid_foliar,
-    ...productsData.supplements.suspension,
-    ...productsData.supplements.liquid_powder,
-    ...productsData.latest_products,
-  ];
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const data = await fetchProducts();
+        const foundProduct = data.find(p => p.Name === id);
+        setProduct(foundProduct);
+        setLoading(false);
+      } catch (err) {
+        setError('فشل تحميل المنتجات');
+        setLoading(false);
+      }
+    };
+    getProducts();
+  }, [id]);
+  console.log(product);
 
-  const product = allProducts.find((p) => p.id === id);
+  const hasTabContent = (tabName) => {
+    switch (tabName) {
+      case "نبذة":
+        return !!product?.Overview;
+      case "الوصف":
+        return !!product?.Description;
+      case "معدلات الاستخدام":
+        return !!(product?.Usage_Instructions || product?.usage);
+      case "المواد الفعالة":
+        return !!product?.Active_Ingredients;
+      case "ملاحظات":
+        return !!product?.Notes;
+      default:
+        return false;
+    }
+  };
 
-  if (!product) {
-    return <div>المنتج غير موجود</div>;
-  }
+  const tabs = [
+    { name: "نبذة", key: "نبذة" },
+    { name: "الوصف", key: "الوصف" },
+    { name: "معدلات الاستخدام", key: "معدلات الاستخدام" },
+    { name: "المواد الفعالة", key: "المواد الفعالة" },
+    { name: "ملاحظات", key: "ملاحظات" }
+  ].filter(tab => hasTabContent(tab.key));
+
+  useEffect(() => {
+    if (product && !hasTabContent(activeTab) && tabs.length > 0) {
+      setActiveTab(tabs[0].key);
+    }
+  }, [product, activeTab, tabs]);
+
+  if (loading) return <div>جاري التحميل...</div>;
+  if (error) return <div>{error}</div>;
+  if (!product) return <div>المنتج غير موجود</div>;
+
+  const getTabContent = () => {
+    switch (activeTab) {
+      case "نبذة":
+        return product.Overview || "";
+      case "الوصف":
+        return product.Description || "";
+      case "معدلات الاستخدام":
+        return product.Usage_Instructions || product.usage || "";
+      case "المواد الفعالة":
+        return product.Active_Ingredients || "";
+      case "ملاحظات":
+        return product.Notes || "";
+      default:
+        return "";
+    }
+  };
 
   return (
     <div className="productDetails">
@@ -43,7 +94,7 @@ const ProductDetails = () => {
         <div className="absolute inset-0 bg-[#163720]/70 flex flex-col justify-center items-center z-10">
           <AnimatedText
             dir="rtl"
-            text={product.name}
+            text={product.Name}
             ClassName="text-center mt-6 lg:!text-6xl md:!text-5xl sm:!text-4xl xs:!text-3xl text-white z-20"
           />
           <div className="w-full flex justify-center mt-4 z-20">
@@ -57,9 +108,17 @@ const ProductDetails = () => {
                 <span className="text-light">{"<"}--</span>
               </li>
               <li>
-                <Link to={`/category/${product.category || "products"}`} className="text-light no-underline border-b-2 border-light">
-                  المنتجات
+                <Link to={`/category/${product.Category}`} className="text-light no-underline">
+                  {product.Category === "fertilizers" ? "الأسمدة" : product.Category === "pesticides" ? "المبيدات" : "المكملات"}
                 </Link>
+              </li>
+              <li>
+                <span className="text-light">{"<"}--</span>
+              </li>
+              <li>
+                <span className="text-light no-underline border-b-2 border-light">
+                  {product.Name}
+                </span>
               </li>
             </ul>
           </div>
@@ -73,38 +132,27 @@ const ProductDetails = () => {
           alt=""
         />
         <div className="container">
-          <div className="m-auto row justify-center items-center max-w-5xl mx-auto w-full">
+          <div className="m-auto row justify-center items-center max-w-6xl mx-auto w-full">
             <div className="col-md-7">
               <div dir="rtl" className="content text-right">
-                <h2 className="text-4xl text-dark font-bold">{product.name}</h2>
-                <div className="n flex justify-around items-center text-lg my-10 bg-[#ebebeb] p-3">
-                  <span
-                    className={`px-3 py-1 rounded-md cursor-pointer ${
-                      activeTab === "نبذة" ? "bg-[#d1d1d1] font-bold" : "bg-transparent"
-                    }`}
-                    onClick={() => setActiveTab("نبذة")}
-                  >
-                    نبذة
-                  </span>
-                  <span
-                    className={`px-3 py-1 rounded-md cursor-pointer ${
-                      activeTab === "معدلات الاستخدام" ? "bg-[#d1d1d1] font-bold" : "bg-transparent"
-                    }`}
-                    onClick={() => setActiveTab("معدلات الاستخدام")}
-                  >
-                    معدلات الاستخدام
-                  </span>
-                  <span
-                    className={`px-3 py-1 rounded-md cursor-pointer ${
-                      activeTab === "المواد الفعالة" ? "bg-[#d1d1d1] font-bold" : "bg-transparent"
-                    }`}
-                    onClick={() => setActiveTab("المواد الفعالة")}
-                  >
-                    المواد الفعالة
-                  </span>
-                </div>
-                <p className="border-s-2 ps-2 text-lg leading-loose">
-                  {product.tabs[activeTab]}
+                <h2 className="text-4xl text-dark font-bold">{product.Name}</h2>
+                {tabs.length > 0 && (
+                  <div className="n flex justify-around items-center w-full text-lg my-10 bg-[#ebebeb] p-3">
+                    {tabs.map(tab => (
+                      <span
+                        key={tab.key}
+                        className={`px-3 py-1 rounded-md cursor-pointer ${
+                          activeTab === tab.key ? "bg-[#d1d1d1] font-bold" : "bg-transparent"
+                        }`}
+                        onClick={() => setActiveTab(tab.key)}
+                      >
+                        {tab.name}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <p className="border-s-2 ps-2 text-lg leading-loose w-full whitespace-pre-line">
+                  {getTabContent()}
                 </p>
               </div>
             </div>
@@ -112,11 +160,12 @@ const ProductDetails = () => {
               <div className="image flex flex-col justify-center align-items-center text-center">
                 <img
                   className="w-75"
+                  // src={product.Image[0].url}
                   src={p1}
-                  alt={`${product.name} - ${product.weight}`}
+                  alt={`${product.Name} - ${product.Weight}`}
                 />
                 <p className="bg-[#254C00] w-75 py-2 rounded-tr-lg rounded-tl-lg rounded-br-lg text-lg text-white">
-                  {product.weight}
+                  {product.Weight}
                 </p>
               </div>
             </div>

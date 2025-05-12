@@ -9,6 +9,7 @@ import ContactUsSection from "../components/contactUsSection/ContactUsSection";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ProductList from "./ProductList";
 
 
 const Home = () => {
@@ -88,6 +89,8 @@ const Home = () => {
         <Category />
 
         <ContactUsSection/>
+
+        <ProductList/>
 
       </div>
     </>
