@@ -4,7 +4,6 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import image from "../../Assets/category.jpg";
 import ex from "../../Assets/ex.png";
-// import productsData from "../../products.json";
 import { fetchProducts } from "../../airtable";
 
 const RecentProducts = () => {

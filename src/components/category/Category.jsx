@@ -6,6 +6,7 @@ import img3 from "../../Assets/مبيدات حشريه.svg";
 import img4 from "../../Assets/مبيدات فطريه.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+//kk
 
 const Category = () => {
   

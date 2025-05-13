@@ -24,3 +24,4 @@ export const fetchProducts = async () => {
     throw error;
   }
 };
+// commented out for now

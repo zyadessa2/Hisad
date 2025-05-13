@@ -65,7 +65,7 @@ const ProductDetails = () => {
   if (loading) return <div>جاري التحميل...</div>;
   if (error) return <div>{error}</div>;
   if (!product) return <div>المنتج غير موجود</div>;
-
+//..
   const getTabContent = () => {
     switch (activeTab) {
       case "نبذة":

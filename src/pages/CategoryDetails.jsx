@@ -5,7 +5,7 @@ import AnimatedText from "../others/AnimatedText";
 import mainImg from "../Assets/hero section.webp";
 import ex from "../Assets/ex.png";
 import { fetchProducts } from "../airtable";
-
+//kk
 const CategoryDetails = () => {
   const { category } = useParams(); // جلب اسم القسم من الـ URL
 
