@@ -116,16 +116,19 @@ const CategoryDetails = () => {
                           {product.Weight}
                         </p>
                       </div>
-                      <img
-                        src={
-                          product.Image &&
-                          product.Image[0] &&
-                          product.Image[0].url
-                            ? product.Image[0].url
-                            : ex
-                        }
-                        alt={`${product.Name} - ${product.Weight}`}
-                      />
+                      <div className="image-container w-full h-[200px] flex items-center justify-center">
+                        <img
+                          src={
+                            product.Image &&
+                            product.Image[0] &&
+                            product.Image[0].url
+                              ? product.Image[0].url
+                              : ex
+                          }
+                          alt={`${product.Name} - ${product.Weight}`}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
                       <h3 className="py-3 text-xl">{product.Name}</h3>
                     </div>
                   </Link>

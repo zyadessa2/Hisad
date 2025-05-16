@@ -87,23 +87,23 @@ const ContactUs = () => {
                 <motion.div initial={{opacity:0 , y:50}} whileInView={{opacity:.8 , y:0}} transition={{duration:1.5 }} className="c shadow-lg p-4 flex flex-col justify-center align-items-center rounded-lg ">
                   <FiPhoneCall className="text-6xl " />
                   <h4 className="py-3">تواصل معنا</h4>
-                  <div className="numbers text-center grid xl:grid-cols-2 md:grid-cols-1  gap-0 justify-center items-center w-full">
-                    <p className="text-[#254C00] fw-bold p-0 m-0">
+                  <ul className="numbers text-center grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 justify-center items-center w-full list-none p-0 m-0">
+                    <li className="text-[#254C00] fw-bold hover:bg-[#254C00] hover:text-white rounded-lg transition-all duration-300 cursor-pointer ">
                       045 263 8818
-                    </p>
-                    <p className="text-[#254C00] fw-bold p-0 m-0">
+                    </li>
+                    <li className="text-[#254C00] fw-bold hover:bg-[#254C00] hover:text-white rounded-lg transition-all duration-300 cursor-pointer ">
                       015 5465 1229
-                    </p>
-                    <p className="text-[#254C00] fw-bold p-0 m-0">
+                    </li>
+                    <li className="text-[#254C00] fw-bold hover:bg-[#254C00] hover:text-white rounded-lg transition-all duration-300 cursor-pointer ">
                       010 3289 8054
-                    </p>
-                    <p className="text-[#254C00] fw-bold p-0 m-0">
+                    </li>
+                    <li className="text-[#254C00] fw-bold hover:bg-[#254C00] hover:text-white rounded-lg transition-all duration-300 cursor-pointer ">
                       010 0616 8763
-                    </p>
-                    <p className="text-[#254C00] fw-bold p-0 mx-auto">
+                    </li>
+                    <li className="text-[#254C00] !text-center fw-bold hover:bg-[#254C00] hover:text-white rounded-lg transition-all duration-300 cursor-pointer ">
                       010 1391 1732
-                    </p>
-                  </div>
+                    </li>
+                  </ul>
                 </motion.div>
                 <motion.div initial={{opacity:0 , y:50}} whileInView={{opacity:.8 , y:0}} transition={{duration:1.7 }} className="c shadow-lg p-5 py-10 flex flex-col justify-center align-items-center rounded-lg ">
                   <HiOutlineMailOpen className="text-6xl " />

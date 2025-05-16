@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../../Assets/image 1.svg";
 import { Dropdown } from "flowbite-react"; // استيراد Dropdown من flowbite-react
 import { FaChevronDown, FaFacebook, FaInstagram } from "react-icons/fa"; // سهم لتحت من react-icons
-import { IoLogoWhatsapp } from "react-icons/io";
+import { IoLogoWhatsapp, IoLogoYoutube } from "react-icons/io";
 
 const CustomLink = ({ to, title, className = "" }) => {
       const location = useLocation();
@@ -155,8 +155,15 @@ const Navbar = () => {
               className=""
               toggle={handelClick}
             />
+            
+            <CustomMobileLink
+              to="/products"
+              title="المنتجات"
+              className=""
+              toggle={handelClick}
+            />
 
-            <Dropdown
+            {/* <Dropdown
               label={
                 <div className="flex items-center mx-7 text-bold text-lg text-[#445F2D] ">
                   <FaChevronDown className="mr-2" /> المنتجات
@@ -179,7 +186,7 @@ const Navbar = () => {
               >
                 سماد
               </Dropdown.Item>
-            </Dropdown>
+            </Dropdown> */}
 
             
             <CustomMobileLink
@@ -192,7 +199,7 @@ const Navbar = () => {
 
           <nav className="flex items-center justify-center flex-wrap mt-3">
             <motion.a
-              href="https://github.com/zyadessa2"
+              href="https://www.facebook.com/hasadeg1/?locale=ar_AR"
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
@@ -202,21 +209,21 @@ const Navbar = () => {
             </motion.a>
             <motion.a
               className="w-6 mx-3 sm-mx-1"
-              href="https://www.linkedin.com/in/ziad-essa/"
+              href="https://www.youtube.com/channel/UC6lMUe8IAYpXWBlzMw9HvIw"
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
             >
-              <IoLogoWhatsapp className="text-2xl text-green-500" />
+              <IoLogoYoutube className="text-2xl text-green-500" />
             </motion.a>
             <motion.a
               className="w-7 ml-3 sm-mx-1"
-              href="https://wa.me/201066958945"
+              href="https://wa.me/201013911732"
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
             >
-              <FaInstagram className="text-2xl text-red-500" />
+              <IoLogoWhatsapp className="text-2xl text-red-500" />
             </motion.a>
           </nav>
         </div>

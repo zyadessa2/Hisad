@@ -10,7 +10,7 @@ const RecentProducts = () => {
   const settings = {
     dots: false,
     autoplay: true,
-    arrows: true,
+    arrows: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -21,6 +21,7 @@ const RecentProducts = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
     ],
@@ -71,7 +72,7 @@ const RecentProducts = () => {
         </div>
       </div>
 
-      <Slider className="my-16" {...settings}>
+      <Slider className="mt-16" {...settings}>
         {latestProducts.map((product) => (
           <Link
             key={product.id}
@@ -82,14 +83,17 @@ const RecentProducts = () => {
               <div className="label bg-[#254C00] py-0 rounded-br-[15px] rounded-tr-[15px] absolute top-0 left-0">
                 <p className="text-white py-0 px-2 text-lg">{product.Weight}</p>
               </div>
-              <img
-                src={
-                  product.Image && product.Image[0] && product.Image[0].url
-                    ? product.Image[0].url
-                    : ex
-                }
-                alt={`${product.Name} - ${product.Weight}`}
-              />
+              <div className="image-container w-full h-[200px] flex items-center justify-center">
+                <img
+                  src={
+                    product.Image && product.Image[0] && product.Image[0].url
+                      ? product.Image[0].url
+                      : ex
+                  }
+                  alt={`${product.Name} - ${product.Weight}`}
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <h3 className="py-3 text-xl text-dark">{product.Name}</h3>
             </div>
           </Link>

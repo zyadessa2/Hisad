@@ -29,7 +29,6 @@ const ProductDetails = () => {
     };
     getProducts();
   }, [id]);
-  console.log(product);
 
   const hasTabContent = (tabName) => {
     switch (tabName) {
@@ -65,7 +64,7 @@ const ProductDetails = () => {
   if (loading) return <div>جاري التحميل...</div>;
   if (error) return <div>{error}</div>;
   if (!product) return <div>المنتج غير موجود</div>;
-//..
+
   const getTabContent = () => {
     switch (activeTab) {
       case "نبذة":
@@ -166,17 +165,37 @@ const ProductDetails = () => {
           />
           <div className="container">
             <div className="m-auto row justify-center items-center max-w-6xl mx-auto w-full">
-              <div className="col-md-7">
+              {/* Image Section - Will appear first on mobile */}
+              <div className="col-md-5 order-1 order-md-2 mb-8 md:mb-0">
+                <div className="image flex flex-col justify-center align-items-center text-center">
+                  <div className="image-container w-full h-[400px] flex items-center justify-center mb-4">
+                    <img
+                      className="w-full h-full object-contain"
+                      src={
+                        product.Image && product.Image[0] && product.Image[0].url
+                          ? product.Image[0].url
+                          : ex
+                      }
+                      alt={`${product.Name} - ${product.Weight}`}
+                    />
+                  </div>
+                  <p className="bg-[#254C00] w-75 py-2 rounded-tr-lg rounded-tl-lg rounded-br-lg text-lg text-white">
+                    {product.Weight}
+                  </p>
+                </div>
+              </div>
+              {/* Content Section - Will appear second on mobile */}
+              <div className="col-md-7 order-2 order-md-1">
                 <div dir="rtl" className="content text-right">
                   <h2 className="text-4xl text-dark font-bold">
                     {product.Name}
                   </h2>
                   {tabs.length > 0 && (
-                    <div className="n flex justify-around items-center w-full text-lg my-10 bg-[#ebebeb] p-3">
+                    <div className="n flex flex-wrap justify-around items-center w-full text-lg my-10 bg-[#ebebeb] p-3 rounded-lg">
                       {tabs.map((tab) => (
                         <span
                           key={tab.key}
-                          className={`px-3 py-1 rounded-md cursor-pointer ${
+                          className={`px-3 py-1 rounded-md cursor-pointer mb-2 sm:mb-0 ${
                             activeTab === tab.key
                               ? "bg-[#d1d1d1] font-bold"
                               : "bg-transparent"
@@ -188,25 +207,11 @@ const ProductDetails = () => {
                       ))}
                     </div>
                   )}
-                  <p className="border-s-2 ps-2 text-lg leading-loose w-full whitespace-pre-line">
-                    {getTabContent()}
-                  </p>
-                </div>
-              </div>
-              <div className="col-md-5">
-                <div className="image flex flex-col justify-center align-items-center text-center">
-                  <img
-                    className="w-75"
-                    src={
-                      product.Image && product.Image[0] && product.Image[0].url
-                        ? product.Image[0].url
-                        : ex
-                    }
-                    alt={`${product.Name} - ${product.Weight}`}
-                  />
-                  <p className="bg-[#254C00] w-75 py-2 rounded-tr-lg rounded-tl-lg rounded-br-lg text-lg text-white">
-                    {product.Weight}
-                  </p>
+                  <div className="tab-content min-h-[300px]">
+                    <p className="border-s-2 ps-2 text-lg leading-loose w-full whitespace-pre-line">
+                      {getTabContent()}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
