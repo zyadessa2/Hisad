@@ -45,8 +45,8 @@ const Category = () => {
       </div>
 
       <div className="categoryCard relative -top-40 sm:-top-28">
-        <div className="container bg-white shadow-lg p-6 rounded-lg">
-          <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center">
+        <div className="container bg-white flex justify-center items-center shadow-lg p-6 rounded-lg">
+          <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-11 justify-center items-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -60,24 +60,6 @@ const Category = () => {
               <Link
                 className="no-underline btn !bg-[#45B07E] hover:!bg-[#389167] !px-6 text-light !text-lg font-semibold mt-2"
                 to={"/category/fertilizers"}
-              >
-                اعرف اكثر
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5 }}
-              className="text-center"
-            >
-              <img src={img2} alt="مكملات غذائيه" className="mx-auto" />
-              <h3 className="text-[#254C00] lg:text-xl sm:text-2xl mt-2">
-                مكملات غذائيه
-              </h3>
-              <Link
-                className="no-underline btn !bg-[#45B07E] hover:!bg-[#389167] !px-6 text-light !text-lg font-semibold mt-2"
-                to={"/category/supplements"}
               >
                 اعرف اكثر
               </Link>

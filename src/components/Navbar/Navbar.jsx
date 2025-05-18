@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../Assets/image 1.svg";
-import { Dropdown } from "flowbite-react"; // استيراد Dropdown من flowbite-react
-import { FaChevronDown, FaFacebook, FaInstagram } from "react-icons/fa"; // سهم لتحت من react-icons
+import logo from "../../Assets/logo.png";
+import { FaFacebook } from "react-icons/fa"; // سهم لتحت من react-icons
 import { IoLogoWhatsapp, IoLogoYoutube } from "react-icons/io";
 
 const CustomLink = ({ to, title, className = "" }) => {
@@ -231,7 +230,7 @@ const Navbar = () => {
 
       <div className="absolute bg-light rounded-2xl left-[50%] top-2 translate-x-[-50%]">
         <Link to={'/'}>
-        <img src={logo} alt="حصاد للتقنيه الزراعيه المتطوره" />
+        <img className="w-28" src={logo} alt="حصاد للتقنيه الزراعيه المتطوره" />
         </Link>
       </div>
     </header>

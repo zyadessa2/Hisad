@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../Assets/image 1.svg'
+import logo from '../../Assets/logo.png'
 import { Link, useLocation } from 'react-router-dom'
 import { FaFacebook,  FaInstagram, FaPhoneAlt,  } from 'react-icons/fa'
 import {  IoLogoWhatsapp } from 'react-icons/io'
